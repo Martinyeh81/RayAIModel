@@ -13,6 +13,8 @@
   執行ComputeSquare.py，讓compute function能夠分散於workers執行Task
   ![Task1](https://github.com/Martinyeh81/RayAIModel/blob/main/RayXSquare/Images/question1task.png)
   ![Task2](https://github.com/Martinyeh81/RayAIModel/blob/main/RayXSquare/Images/question1answer.png)
+## 答案
+  ![Answer1](https://github.com/Martinyeh81/RayAIModel/blob/main/RayXSquare/Images/question1finalanswer.png)
 
 
 
