@@ -1,4 +1,4 @@
-# Question 1
+# Question 2
 
 |Packages|Version|
 |---|---|
@@ -10,8 +10,8 @@
   ![RayclusterIP](https://github.com/Martinyeh81/RayAIModel/blob/main/RayXSquare/Images/RayIP.png)
   ![RayDashboardIP](https://github.com/Martinyeh81/RayAIModel/blob/main/RayXSquare/Images/RayDashboardIP.png)
 ## 執行
-  執行ComputeSquare.py，讓compute function能夠分散於workers執行Task
-  ![Task1](https://github.com/Martinyeh81/RayAIModel/blob/main/RayXSquare/Images/question1task.png)
-  ![Task2](https://github.com/Martinyeh81/RayAIModel/blob/main/RayXSquare/Images/question1answer.png)
+  執行RayRetry.py，總共for迴圈整個流程，但讓unstable_task function有50%的機率失敗，並且最多重複三次，超過就停止
+  ![Task1](https://github.com/Martinyeh81/RayAIModel/blob/main/UnstableTask/Images/question2task.png)
+  ![Task2](https://github.com/Martinyeh81/RayAIModel/blob/main/UnstableTask/Images/question2answer.png)
 ## 答案
-  ![Answer1](https://github.com/Martinyeh81/RayAIModel/blob/main/RayXSquare/Images/question1finalanswer.png)
+  ![Answer2](https://github.com/Martinyeh81/RayAIModel/blob/main/UnstableTask/Images/question2finalanswer.png)
