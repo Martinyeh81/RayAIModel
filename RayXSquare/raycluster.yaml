@@ -1,0 +1,52 @@
+apiVersion: ray.io/v1
+kind: RayCluster
+metadata:
+  name: raycluster-complete
+spec:
+  rayVersion: "2.20.0"
+  enableInTreeAutoscaling: true
+  headGroupSpec:
+    serviceType: ClusterIP # Options are ClusterIP, NodePort, and LoadBalancer
+    rayStartParams: 
+      dashboard-host: '0.0.0.0'
+    #pod template
+    template: # Pod template
+        metadata: # Pod metadata
+        spec: # Pod spec
+            containers:
+              - name: ray-head
+                image: rayproject/ray-ml:2.20.0-py311
+                resources:
+                  limits:
+                    cpu: "1"
+                    memory: "4Gi"
+                  requests:
+                    cpu: "1"
+                    memory: "4Gi"
+                ports: # Optional service port overrides
+                - containerPort: 6379
+                  name: gcs
+                - containerPort: 8265
+                  name: dashboard
+                - containerPort: 10001
+                  name: client
+                - containerPort: 8000
+                  name: serve
+  workerGroupSpecs:
+  - groupName: small-group
+    replicas: 2
+    minReplicas: 2
+    maxReplicas: 3
+    rayStartParams: {}
+    template: # Pod template
+      spec:
+        containers:
+          - name: ray-worker # must consist of lower case alphanumeric characters or '-', and must start and end with an alphanumeric character (e.g. 'my-name',  or '123-abc'
+            image: rayproject/ray-ml:2.20.0-py311
+            resources:
+              limits:
+                cpu: "1"
+                memory: "3Gi"
+              requests:
+                cpu: "1"
+                memory: "3Gi"
