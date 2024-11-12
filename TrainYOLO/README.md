@@ -23,6 +23,7 @@
   
 ## Traning
 ### 分割資料
+
   因數據總共只有4969分，因此拆分成以下:
   
   trainset's shape is (3530, 640*640) 70%
@@ -30,6 +31,7 @@
   Valset's shape is (801, 640*640) 17%
   
   testset's shape is (638, 640*640) 13%
+  
 ### 超參數調整
   1. Epoch: 30
 
@@ -53,6 +55,13 @@
      如果損失減少得非常緩慢，則可以慢慢增加Learning Rate。
 
 ## Train Result
+
+|| Epoch | Precision | Recall |
+|-------|-------|---------------|------------|
+| Train | 30    | 0.94545       | 0.87700    |
+| Val | 30    | 0.94552       | 0.87706    |
+
+
 ### Confusion_Matrix_normalized
 ![Confusion](https://github.com/Martinyeh81/RayAIModel/blob/main/TrainYOLO/Images/confusion_matrix_normalized.png)
 
@@ -64,6 +73,25 @@
 
 ### Recall
 ![R](https://github.com/Martinyeh81/RayAIModel/blob/main/TrainYOLO/Images/R_curve.png)
+
+## Tune
+微調Learning Rate，選取10個從0.00005~0.1之間的數值，查看最佳的準確度
+![Tune](https://github.com/Martinyeh81/RayAIModel/blob/main/TrainYOLO/Images/YOLOtune.png)
+
+### 判斷 Overfitting:
+  1. 如果trainset的 F1 score、recall 和 precision 高於 val set的值並且差距太大，代表Overfitting
+  2. 觀察曲線如果train loss 持續下降但 val loss 在某個點開始上升，這也是Overfitting
+### 解決 Overfitting 方法：
+  1.Data Augmentation
+  2.Dropout參數，讓Network避免fully connect
+  3.Early Stopping
+  4.增加train set的數量
+  5.降低 learning rate
+
+### 如果不是YOLO
+  1.可以正則化 (Regularization)L1 or L2
+  2.調整模型複雜度(Layer)
+
 
 
 
