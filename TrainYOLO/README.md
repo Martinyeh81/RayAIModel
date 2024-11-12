@@ -7,7 +7,7 @@
 |ultralytics|8.3.27|
   
 ## Data
-  1. The data is from Kaggle(https://www.kaggle.com/code/pkdarabi/traffic-signs-detection-using-yolov8)
+  1. The data and code are from Kaggle(https://www.kaggle.com/code/pkdarabi/traffic-signs-detection-using-yolov8)
   2. 總共15種Labels
   3. 圖片為416 x 416 pixels x 3 channels
      ![Sign](https://github.com/Martinyeh81/RayAIModel/blob/main/TrainYOLO/Images/SignExample.png)
