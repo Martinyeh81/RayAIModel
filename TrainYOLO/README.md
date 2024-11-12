@@ -41,15 +41,29 @@
 
      數值越高運算能力慢，收斂快，但會找不到到極值，在做gradient descent時候容易會Local minimum
   
-  5. optimizer: Adam
-     結合Momentum與RAMSprop的優點
-  6. Learning Rate:
-     如果損失函數在訓練早期波動劇烈或無法收斂，可能需要減小學習率。
-     如果損失減少得非常緩慢，則可以考慮逐步增大學習率。
+  4. optimizer: Adam
 
-## 結果
-### confusion_matrix_normalized
-![AIGCSSample](https://github.com/Martinyeh81/RayAIModel/blob/main/TrainYOLO/Images/AIGCSSample.png)
+     結合Momentum與RAMSprop的優點，加速收斂
+  
+  5. Learning Rate: 0.000526 (AUTO)
+     先從高的learning rate開始訓練，因使用的模型是pretrain好的，可以直接調整參數warmup_epochs=0，讓一開始的learning rate比較大。
+
+     如果loss function在訓練早期波動劇烈或無法收斂，可能需要減小Learning Rate。
+
+     如果損失減少得非常緩慢，則可以慢慢增加Learning Rate。
+
+## Train Result
+### Confusion_Matrix_normalized
+![Confusion](https://github.com/Martinyeh81/RayAIModel/blob/main/TrainYOLO/Images/confusion_matrix_normalized.png)
+
+### F1_curve
+![F1](https://github.com/Martinyeh81/RayAIModel/blob/main/TrainYOLO/Images/F1_curve.png)
+
+### Precision
+![P](https://github.com/Martinyeh81/RayAIModel/blob/main/TrainYOLO/Images/P_curve.png)
+
+### Recall
+![R](https://github.com/Martinyeh81/RayAIModel/blob/main/TrainYOLO/Images/R_curve.png)
 
 
 
