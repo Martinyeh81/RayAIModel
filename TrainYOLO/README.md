@@ -79,17 +79,27 @@
 ![Tune](https://github.com/Martinyeh81/RayAIModel/blob/main/TrainYOLO/Images/YOLOtune.png)
 
 ### 判斷 Overfitting:
+
   1. 如果trainset的 F1 score、recall 和 precision 高於 val set的值並且差距太大，代表Overfitting
+     
   2. 觀察曲線如果train loss 持續下降但 val loss 在某個點開始上升，這也是Overfitting
+
 ### 解決 Overfitting 方法：
+
   1.Data Augmentation
+  
   2.Dropout參數，讓Network避免fully connect
+  
   3.Early Stopping
+  
   4.增加train set的數量
+  
   5.降低 learning rate
 
 ### 如果不是YOLO
+
   1.可以正則化 (Regularization)L1 or L2
+  
   2.調整模型複雜度(Layer)
 
 
