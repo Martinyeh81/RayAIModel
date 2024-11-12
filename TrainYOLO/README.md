@@ -86,21 +86,18 @@
 
 ### 解決 Overfitting 方法：
 
-  1.Data Augmentation
+  1. Data Augmentation
+  2. Dropout參數，讓Network避免fully connect
+  3. Early Stopping
+  4. 增加train set的數量
+  5. 降低 learning rate
   
-  2.Dropout參數，讓Network避免fully connect
-  
-  3.Early Stopping
-  
-  4.增加train set的數量
-  
-  5.降低 learning rate
 
 ### 如果不是YOLO
 
-  1.可以正則化 (Regularization)L1 or L2
-  
-  2.調整模型複雜度(Layer)
+  1. 可以正則化 (Regularization)L1 or L2
+  2. 調整模型複雜度(Layer)
+
 
 
 
